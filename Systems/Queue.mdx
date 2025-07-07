@@ -1,35 +1,36 @@
----
-description: "Players can join the queue by walking into a designated queue part and will automatically be positioned behind the last person in line, with smooth spacing and movement. A simple, user-friendly GUI shows their position in line, along with a "Leave Queue" button for exiting at any time.
-
-Features:
-
-✅ Module-based design for easy integration into custom setups
-🧱 Ready-made queue part for instant use
-🔁 Automatic player movement as the queue progresses
-🖥️ On-screen GUI displaying queue position and leave option
-🎮 Ideal for rides, counters, shops, and more"
-title: "Queue/Line"
----
-
 <Info>
   Make sure you have an updated version of the system. See [\*\*Buying](/Buying) to buy and update your system.
 </Info>
 
-
 # Getting Started
 
-The queue system comes with a singular queue along with a leave part and a queue gui with the spot the player is in and a leave button. 
+The queue system comes with a singular queue along with a leave part and a queue gui with the spot the player is in and a leave button.
 
-## Setup
+# Setup
+
+## Preparation
+
+<Danger>
+  Important\! Not doing this will break your system\!
+</Danger>
+
+After you add the model, you will need to drag the gui named `ScreenGui `to` PlayerGui`. Everything else will work on its own. Make sure not to change the parent of everything else unless you want to get rid of the default system.
+
+## Deleting the ready-made queue
+
+The system has a ready-made queue which is all in the folder titled `queues` under the Module titled `queue`. To delete the ready-made system, simply delete the folder titled `queues.`
+
+<Danger>
+  Make sure you delete the entire folder titled queues. Not deleting it can cause errors.
+</Danger>
 
 ## Creating more queues
 
-To create a queue, just clone the existing clone titled `queue1` and change the clone's name. You can move it in any direction you please.
+To create a new queue in the ready-made system, just clone the existing clone titled `queue1` and change the clone's name. You can move it in any direction you please.
 
 <Warning>
   Creating a queue with an existing name will cause an error and your new queue will not work.
 </Warning>
-
 
 # Functions
 
