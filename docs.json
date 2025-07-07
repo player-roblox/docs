@@ -1,13 +1,13 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "$schema": "https://player.mintlify.app",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Player's Systems",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "",
   "navigation": {
     "tabs": [
       {
