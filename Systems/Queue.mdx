@@ -30,6 +30,72 @@ To create a new queue in the ready-made system, just clone the existing clone ti
   Creating a queue with an existing name will cause an error and your new queue will not work.
 </Warning>
 
+## Customization
+
+Customization for the queue settings, ui, and the 3D queue is quick and easy to use.
+
+### Queue settings (Module)
+
+The queue module allows you to set the maximum amount of players that can enter your queue, the cooldown before they rejoin, and the studs between each player.
+
+To set these values while creating a queue, add a new table in the arguments in the `Setup` function. You don't need to include all 3 of these values, if you want to use default values, just put `nil` in the spot of the one you want to use the default for. See [Setup](https://player.mintlify.app/Systems/Queue#setup-2) for more information.
+
+After creating your queue, you can adjust the customization values by using the `setCustomization`function with the queue name and a customization table just like the `Setup` function. See [setCustomization](https://player.mintlify.app/Systems/Queue#setCustomization) for more information.
+
+### UI
+
+You can customize how the GUI `Queue` looks as much as you'd like. Some properties should not be edited to keep the queue system working.
+
+<Accordion title="Do not change:" defaultOpen icon="x" iconType="solid">
+  - The parent of UI elements. Make sure the GUI titled "Queue" is always in StarterGui
+  - The name of UI elements
+  - Any scripts
+  - Whether the UI is enabled
+</Accordion>
+
+<Accordion title="Do change:" icon="check" iconType="solid">
+  - Fonts
+  - TextColors
+  - Position
+  - Size
+  - BackgroundColors
+  - Stroke
+  - UICorner radius
+  - Text (May not reflect in actual gameplay)
+  - Background Transparency
+  - TextTransparency
+  - Visibility
+</Accordion>
+
+### 3D queue 
+
+The 3D queue is the start part and the join part as well as any other parts, models, or meshes that add to the look of the queue. What you can change is similar, but still different from UI.
+
+<Check>
+  As long as you pass the start part and the join part in the `Setup` function, you can change things like Parents and Names.
+</Check>
+
+<Accordion title="Do not change:" defaultOpen icon="x" iconType="solid">
+  - Any scripts
+  - CanTouch (Must be on)
+  - CanCollide (Must be off)
+</Accordion>
+
+<Accordion title="Do change:" icon="check" iconType="solid">
+  - Parents
+  - Names
+  - Position
+  - Size
+  - Orientation
+  - Colors
+  - Transparency
+  - Shape
+  - Reflectance
+  - Material
+</Accordion>
+
+### 
+
 # Updates
 
 # Functions
@@ -38,7 +104,7 @@ The queue system comes with a ready-made line, but you might not find that it is
 
 https://create.roblox.com/docs/tutorials/fundamentals/coding-6/intro-to-module-scripts#use-modules-in-other-scripts
 
-## Setup
+## Setup()
 
 Sets up a new queue. See [**Getting Started**](https://player.mintlify.app/Systems/Queue#getting-started) for more information.
 
@@ -54,6 +120,20 @@ Sets up a new queue. See [**Getting Started**](https://player.mintlify.app/Syste
 
 <ResponseField name="front" type="Part" required>
   A part located at the front of the queue. This is where the first player in the queue will start.
+</ResponseField>
+
+<ResponseField name="customizeTable" type="{}">
+  <ResponseField name="maxplayers" type="Number" default="4">
+    The maximum amount of players that can enter the queue at once.
+
+    <ResponseField name="studstomove" type="Number" default="3">
+      How many studs behind the previous player a new player should go to.
+
+      <ResponseField name="cooldowntime" type="Number" default="3">
+        The amount of time in seconds the player must wait before being able to join the queue again.
+      </ResponseField>
+    </ResponseField>
+  </ResponseField>
 </ResponseField>
 
 ### Returns
@@ -117,6 +197,38 @@ Leaves the queue, hides the queue gui, and teleports the player to the leave par
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
   
 </Card>
+
+## setCustomization()
+
+Sets the customization for the specified queue. 
+
+### **Arguments**
+
+<ResponseField name="queue" type="String" required>
+  The name of your queue to be used within the queue system.
+</ResponseField>
+
+<ResponseField name="customizeTable" type="{}" required>
+  <ResponseField name="maxplayers" type="Number" default={4}>
+    The maximum amount of players that can enter the queue at once.
+
+    <ResponseField name="studstomove" type="Number" default={3}>
+      How many studs behind the previous player a new player should go to.
+
+      <ResponseField name="cooldowntime" type="Number" default={3}>
+        The amount of time in seconds the player must wait before being able to join the queue again.
+      </ResponseField>
+    </ResponseField>
+  </ResponseField>
+</ResponseField>
+
+### Returns
+
+<Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
+  
+</Card>
+
+## 
 
 # Events
 
