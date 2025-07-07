@@ -1,0 +1,94 @@
+---
+title: "Queue/line system"
+---
+
+<Info>
+  Make sure you have an updated version of the system. See [\*\*Buying](/Buying) to buy and update your system.
+</Info>
+
+The queue system comes with a ready-made line, but you might not find that it is completely useful for your experience. For example, you might want to create an admin panel that makes people join/leave the queue. In that case, you can use the module which is made to integrate directly into your scripts.
+
+## Functions
+
+### Setup
+
+Sets up a new queue. See **Getting Started** for more information.
+
+### **Arguments**
+
+<ResponseField name="name" type="String" required>
+  The name of your queue to be used within the queue system.
+</ResponseField>
+
+<ResponseField name="start" type="Part" required>
+  The part that players must touch to enter the queue.
+</ResponseField>
+
+<ResponseField name="front" type="Part" required>
+  A part located at the front of the queue. This is where the first player in the queue will start.
+</ResponseField>
+
+## Returns
+
+<Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
+  
+</Card>
+
+
+## getQueueAndPosition()
+
+Gets the name of the queue and the position a specified player is in.
+
+### **Arguments**
+
+<ResponseField name="player" type="Player Object" required>
+  The player object to find the information for.
+</ResponseField>
+
+## Returns
+
+<ResponseField name="Queue, Position" type="Tuple" default="nil, nil">
+  The name of the queue and the position the specified player is currently in.
+</ResponseField>
+
+### joinqueue()
+
+Joins the queue, displays the queue gui, and moves the player behind the last player in the queue.
+
+### **Arguments**
+
+<ResponseField name="queue" type="string" required>
+  The name of the queue the player should leave.
+</ResponseField>
+
+<ResponseField name="player" type="Player Object" required>
+  The player object that will leave the queue.
+</ResponseField>
+
+## Returns
+
+<Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
+  
+</Card>
+
+### leavequeue()
+
+Leaves the queue, hides the queue gui, and teleports the player to the leave part.
+
+### **Arguments**
+
+<ResponseField name="queue" type="string" required>
+  The name of the queue the player should join.
+</ResponseField>
+
+<ResponseField name="player" type="Player Object" required>
+  The player object that will join the queue.
+</ResponseField>
+
+## Returns
+
+<Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
+  
+</Card>
+
+### 
