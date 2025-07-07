@@ -4,7 +4,7 @@
 
 # Getting Started
 
-The queue system comes with a singular queue along with a leave part and a queue gui with the spot the player is in and a leave button.
+The queue system comes with a singular queue along with a leave part and a queue gui with the spot the player is in and a leave button. Make sure you follow the preparation step below.
 
 # Setup
 
@@ -34,11 +34,13 @@ To create a new queue in the ready-made system, just clone the existing clone ti
 
 # Functions
 
-The queue system comes with a ready-made line, but you might not find that it is completely useful for your experience. For example, you might want to create an admin panel that makes people join/leave the queue. In that case, you can use the module which is made to integrate directly into your scripts.
+The queue system comes with a ready-made line, but you might not find that it is completely useful for your experience. For example, you might want to create an admin panel that makes people join/leave the queue. In that case, you can use the module which is made to integrate directly into your scripts. Make sure you know what you're doing before you start. Here is a document explaining how to use Modules.
+
+https://create.roblox.com/docs/tutorials/fundamentals/coding-6/intro-to-module-scripts#use-modules-in-other-scripts
 
 ## Setup
 
-Sets up a new queue. See **Getting Started** for more information.
+Sets up a new queue. See [**Getting Started**](https://player.mintlify.app/Systems/Queue#getting-started) for more information.
 
 ### **Arguments**
 
@@ -117,3 +119,21 @@ Leaves the queue, hides the queue gui, and teleports the player to the leave par
 </Card>
 
 # Events
+
+## PlayerPositionChanged
+
+Fires when a player has changed position in a queue.
+
+### **Arguments**
+
+<ResponseField name="queue" type="string">
+  The name of the queue the player has moved in.
+</ResponseField>
+
+<ResponseField name="player" type="Player Object">
+  The player object that has moved.
+</ResponseField>
+
+<ResponseField name="position" type="number">
+  The new position of the player. `nil` if the player is no longer in the queue.
+</ResponseField>
