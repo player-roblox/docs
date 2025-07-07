@@ -1,6 +1,6 @@
 {
   "$schema": "https://player.mintlify.app",
-  "theme": "mint",
+  "theme": "willow",
   "name": "Player's Systems",
   "colors": {
     "primary": "#16A34A",
@@ -32,7 +32,7 @@
       "anchors": [
         {
           "anchor": "Discord",
-          "href": "https://mintlify.com/docs",
+          "href": "https://discord.gg/Nz8x6VFvXv",
           "icon": "discord"
         }
       ]
