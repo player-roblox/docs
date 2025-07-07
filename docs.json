@@ -16,18 +16,13 @@
           {
             "group": "Get Started",
             "pages": [
-              "Buying",
+              "Buying"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Systems",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "Systems/Queue"
             ]
           }
         ]
