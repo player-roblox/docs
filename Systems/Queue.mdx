@@ -1,5 +1,5 @@
 <Info>
-  Make sure you have an updated version of the system. See [\*\*Buying](/Buying) to buy and update your system.
+  Make sure you have an updated version of the system. See [Buying](/Buying) to buy and update your system.
 </Info>
 
 # Getting Started
@@ -94,8 +94,6 @@ The 3D queue is the start part and the join part as well as any other parts, mod
   - Material
 </Accordion>
 
-### 
-
 # Updates
 
 # Functions
@@ -136,6 +134,37 @@ Sets up a new queue. See [**Getting Started**](https://player.mintlify.app/Syste
   </ResponseField>
 </ResponseField>
 
+<CodeGroup>
+
+```lua Example 1: Folder
+--will setup all the queues in a folder assuming they are a part and they have a frontPart
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+local folder = workspace.queues
+for i,queue in folder:GetChildren() do
+if queue:IsA("Part") then
+local front = queue.frontPart
+local start = queue
+local name = queue.Name
+queueModule.Setup(name, start, front)
+end
+end
+```
+
+
+```lua Example 2: Customization
+--will setup a queue with customization
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+local queue = workspace.queue1
+local start = queue.start
+local front = queue.front
+local maxplayers = 5
+local studstomove = nil --will be the default value
+local customization = {maxplayers, studstomove} -- since cooldown time is not specified, it will be the default value
+queueModule.Setup(queue, start, front, customization)
+```
+
+</CodeGroup>
+
 ### Returns
 
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
@@ -158,6 +187,19 @@ Gets the name of the queue and the position a specified player is in.
   The name of the queue and the position the specified player is currently in.
 </ResponseField>
 
+```lua
+--will get the queue and the position of the queue that the player is in then print it.
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+local player = game.Players.player14141414141414
+local queue, position = queueModule.getQueueAndPosition(player)
+
+if queue == nil then
+print("Player is not in a queue")
+else
+print("Player is in the "..queue.." queue and is in position "..position..".")
+end
+```
+
 ## joinqueue()
 
 Joins the queue, displays the queue gui, and moves the player behind the last player in the queue.
@@ -178,6 +220,14 @@ Joins the queue, displays the queue gui, and moves the player behind the last pl
   
 </Card>
 
+```lua
+--will make the player walk to the end of the queue line and join the queue
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+local player = game.Players.player14141414141414
+local queuename = "queue1"
+queueModule.joinqueue(queuename, player)
+```
+
 ## leavequeue()
 
 Leaves the queue, hides the queue gui, and teleports the player to the leave part.
@@ -197,6 +247,14 @@ Leaves the queue, hides the queue gui, and teleports the player to the leave par
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
   
 </Card>
+
+```lua
+--will make the player walk to the leave part and leave the queue
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+local player = game.Players.player14141414141414
+local queuename = "queue1"
+queueModule.leavequeue(queuename, player)
+```
 
 ## setCustomization()
 
@@ -222,13 +280,22 @@ Sets the customization for the specified queue.
   </ResponseField>
 </ResponseField>
 
+```lua
+--will change customization for the queue
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+queuename = "queue1"
+local maxplayers = 5
+local studstomove = nil --will be the default value
+local customization = {maxplayers, studstomove} -- since cooldown time is not specified, it will be the default value
+queueModule.setCustomization(queuename, customization)
+```
+
 ### Returns
 
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
   
 </Card>
 
-## 
 
 # Events
 
@@ -249,3 +316,16 @@ Fires when a player has changed position in a queue.
 <ResponseField name="position" type="number">
   The new position of the player. `nil` if the player is no longer in the queue.
 </ResponseField>
+
+```lua
+--will print the position and queue of the player who's position has changed
+local queueModule = require(game.ServerScriptService:WaitForChild("queue"))
+local PlayerPositionChanged = queueModule.PlayerPositionChanged
+PlayerPositionChanged.Event:Connect(function(queue, player, position)
+if position == nil then
+print(player.." has left queue "..queue)
+else
+print(player.." has moved to position "..position.." in "..queue)
+end
+end)
+```
