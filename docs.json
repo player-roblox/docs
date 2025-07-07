@@ -34,6 +34,11 @@
           "anchor": "Discord",
           "href": "https://discord.gg/Nz8x6VFvXv",
           "icon": "discord"
+        },
+        {
+          "anchor": "Roblox Hub",
+          "href": "https://www.roblox.com/games/85230558816779/purchase-hub",
+          "icon": "roblox"
         }
       ]
     }
