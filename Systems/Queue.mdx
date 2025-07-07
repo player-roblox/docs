@@ -10,7 +10,7 @@ The queue system comes with a ready-made line, but you might not find that it is
 
 ## Functions
 
-### Setup
+## Setup
 
 Sets up a new queue. See **Getting Started** for more information.
 
@@ -28,12 +28,11 @@ Sets up a new queue. See **Getting Started** for more information.
   A part located at the front of the queue. This is where the first player in the queue will start.
 </ResponseField>
 
-## Returns
+### Returns
 
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
   
 </Card>
-
 
 ## getQueueAndPosition()
 
@@ -45,13 +44,13 @@ Gets the name of the queue and the position a specified player is in.
   The player object to find the information for.
 </ResponseField>
 
-## Returns
+### Returns
 
 <ResponseField name="Queue, Position" type="Tuple" default="nil, nil">
   The name of the queue and the position the specified player is currently in.
 </ResponseField>
 
-### joinqueue()
+## joinqueue()
 
 Joins the queue, displays the queue gui, and moves the player behind the last player in the queue.
 
@@ -65,13 +64,13 @@ Joins the queue, displays the queue gui, and moves the player behind the last pl
   The player object that will leave the queue.
 </ResponseField>
 
-## Returns
+### Returns
 
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
   
 </Card>
 
-### leavequeue()
+## leavequeue()
 
 Leaves the queue, hides the queue gui, and teleports the player to the leave part.
 
@@ -85,7 +84,7 @@ Leaves the queue, hides the queue gui, and teleports the player to the leave par
   The player object that will join the queue.
 </ResponseField>
 
-## Returns
+### Returns
 
 <Card title="Does not return anything." icon="x" iconType="regular" color="#f90404">
   
