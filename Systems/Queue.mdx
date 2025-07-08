@@ -14,13 +14,20 @@ The queue system comes with a singular queue along with a leave part and a queue
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HF1ACB_3-VU?si=b79AM72l6aDBWjFv&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-## Setup
+## One-Step Setup
 
 <Danger>
   Important\! Not doing this will break your system\!
 </Danger>
 
 After you add the model, you will need to drag the gui named `ScreenGui `to` PlayerGui`. Everything else will work on its own. Make sure not to change the parent of everything else unless you want to get rid of the default system.
+
+## Setting up for customization
+
+If you want to customize your queues, you might want to make the following changes for more easy editing
+
+- Move the `queues` folder to workspace if you're using the ready-made queue. This will allow you to see the queues and customize them. See [Customization](https://player.mintlify.app/Systems/Queue#3d-queue).
+- Move the queue module to ServerScriptService. This will allow you to require the module and see all the functions and receieve auto-complete. See [Functions](https://player.mintlify.app/Systems/Queue#functions).
 
 ## Deleting the ready-made queue
 
@@ -105,6 +112,10 @@ The 3D queue is the start part and the join part as well as any other parts, mod
 # Updates
 
 # Functions
+
+<Warning>
+  The queue module will be parented to `ServerScriptService` upon server creation. Do not require the module from its original location.
+</Warning>
 
 The queue system comes with a ready-made line, but you might not find that it is completely useful for your experience. For example, you might want to create an admin panel that makes people join/leave the queue. In that case, you can use the module which is made to integrate directly into your scripts. Make sure you know what you're doing before you start. Here is a document explaining how to use Modules.
 
@@ -305,6 +316,10 @@ queueModule.setCustomization(queuename, customization)
 </Card>
 
 # Events
+
+<Warning>
+  The queue module will be parented to `ServerScriptService` upon server creation. Do not require the module from its original location.
+</Warning>
 
 ## PlayerPositionChanged
 
