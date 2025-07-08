@@ -1,65 +1,67 @@
 {
-  "$schema": "https://player.mintlify.app",
-  "theme": "willow",
-  "name": "Player's Systems",
-  "colors": {
-    "primary": "#0087fc",
-    "light": "#05bae3",
-    "dark": "#095ede"
-  },
-  "icons": "lucide",
-  "favicon": "/images/icon.png",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "Buying",
-              "/Updating"
+    "$schema": "https://player.mintlify.app",
+    "theme": "willow",
+    "name": "Player's Systems",
+    "colors": {
+        "primary": "#0087fc",
+        "light": "#05bae3",
+        "dark": "#095ede"
+    },
+    "icons": {
+        "library": "lucide"
+    },
+    "favicon": "/images/icon.png",
+    "navigation": {
+        "tabs": [
+            {
+                "tab": "Guides",
+                "groups": [
+                    {
+                        "group": "Get Started",
+                        "pages": [
+                            "Buying",
+                            "/Updating"
+                        ]
+                    },
+                    {
+                        "group": "Systems",
+                        "pages": [
+                            "Systems/Queue"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "global": {
+            "anchors": [
+                {
+                    "anchor": "Discord",
+                    "href": "https://discord.gg/Nz8x6VFvXv",
+                    "icon": "discord"
+                },
+                {
+                    "anchor": "Roblox Hub",
+                    "href": "https://www.roblox.com/games/85230558816779/purchase-hub",
+                    "icon": "roblox"
+                }
             ]
-          },
-          {
-            "group": "Systems",
-            "pages": [
-              "Systems/Queue"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Discord",
-          "href": "https://discord.gg/Nz8x6VFvXv",
-          "icon": "discord"
-        },
-        {
-          "anchor": "Roblox Hub",
-          "href": "https://www.roblox.com/games/85230558816779/purchase-hub",
-          "icon": "roblox"
         }
-      ]
+    },
+    "logo": {
+        "light": "/images/icon.png",
+        "dark": "/images/icon.png"
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Support",
+                "href": "https://discord.gg/Nz8x6VFvXv"
+            }
+        ]
+    },
+    "footer": {
+        "socials": {
+            "discord": "https://discord.gg/Nz8x6VFvXv"
+        }
     }
-  },
-  "logo": {
-    "light": "/images/icon.png",
-    "dark": "/images/icon.png"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "https://discord.gg/Nz8x6VFvXv"
-      }
-    ]
-  },
-  "footer": {
-    "socials": {
-      "discord": "https://discord.gg/Nz8x6VFvXv"
-    }
-  }
 }
